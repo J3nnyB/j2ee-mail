@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" 
+		 xmlns="http://xmlns.jcp.org/xml/javaee"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+		 		http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+	<servlet>
+		<servlet-name>MailServlet</servlet-name>
+		<servlet-class>week6mail.MailServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>MailServlet</servlet-name>
+		<url-pattern>/servlet/week6mail.MailServlet</url-pattern>
+	</servlet-mapping>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+	<security-constraint>
+    	<web-resource-collection>
+    		<web-resource-name>HTTPS</web-resource-name>
+        	<url-pattern>/*</url-pattern>
+    	</web-resource-collection>
+    	<user-data-constraint>
+        	<transport-guarantee>CONFIDENTIAL</transport-guarantee>
+    	</user-data-constraint>
+	</security-constraint>
+</web-app>
